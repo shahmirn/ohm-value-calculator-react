@@ -1,12 +1,25 @@
 import { ICalculation } from "../models/ICalculation";
+import { ICalculationState } from "../models/ICalculationState";
 
-const initialState: ICalculation = {};
+interface ICalculationAction extends ICalculation {
+    type?: string;
+}
 
-const calculation = (state: ICalculation = initialState, action: ICalculation) => {
+const initialState: ICalculationState = {
+    loading: false
+};
+
+const calculation = (state: ICalculationState = initialState, action: ICalculationAction) => {
     switch (action.type) {
-        case 'SET_CALCULATION':
+        case 'SET_CALCULATION_START':
+            return {
+                ...state,
+                loading: true
+            }
+        case 'SET_CALCULATION_DONE':
             return  {
                 ...state,
+                loading: false,
                 maximum: action.maximum,
                 minimum: action.minimum,
                 resistance: action.resistance,

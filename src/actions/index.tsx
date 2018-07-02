@@ -10,9 +10,13 @@ export const setBandColor = (band: string, color: string) => ({
     type: 'SET_BAND_COLOR',
 });
 
-const setCalculation = (calculation: ICalculation) => ({
+const setCalculationStart = () => ({
+    type: 'SET_CALCULATION_START'
+});
+
+const setCalculationDone = (calculation: ICalculation) => ({
     ...calculation,
-    type: 'SET_CALCULATION'
+    type: 'SET_CALCULATION_DONE'
 });
 
 export const calculate = (bandColors: {[key: string]: IBandColor}) => (dispatch: any) => {
@@ -22,10 +26,12 @@ export const calculate = (bandColors: {[key: string]: IBandColor}) => (dispatch:
     const bandDColor = bandColors.D && bandColors.D.color;
 
     if (bandAColor && bandBColor && bandCColor && bandDColor) {
+        dispatch(setCalculationStart());
+
         return calculator.calculate(bandAColor, bandBColor, bandCColor, bandDColor, calculation => {
-            dispatch(setCalculation(calculation))
+            dispatch(setCalculationDone(calculation))
         })
     } else {
-        return dispatch(setCalculation({}));
+        return dispatch(setCalculationDone({}));
     }
 };

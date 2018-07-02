@@ -1,7 +1,7 @@
 import { IBandColor } from './IBandColor';
-import { ICalculation } from './ICalculation';
+import { ICalculationState } from './ICalculationState';
 
 export interface IState {
     bandColors: {[key: string]: IBandColor},
-    calculation: ICalculation
+    calculation: ICalculationState
 }

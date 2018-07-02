@@ -20,7 +20,7 @@ describe('actions', () => {
 });
 
 describe('async actions', () => {
-    it('calculate should create SET_CALCULATION calculating resistance is done', () => {
+    it('calculate should create SET_CALCULATION_START and SET_CALCULATION_DONE when calculating resistance is done', () => {
 
         const bandColors: {[key: string]: IBandColor} = {
             'A': {
@@ -61,11 +61,14 @@ describe('async actions', () => {
 
         const expectedActions = [
             {
+                type: 'SET_CALCULATION_START'
+            },
+            {
                 maximum,
                 minimum,
                 resistance,
                 tolerance,
-                type: 'SET_CALCULATION'
+                type: 'SET_CALCULATION_DONE'
             }
         ]
 

@@ -2,6 +2,7 @@ import { configure, shallow } from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
 import * as React from 'react';
 
+import { ICalculationState } from '../models/ICalculationState';
 import { Calculator } from './Calculator';
 
 configure({ adapter: new Adapter() });
@@ -11,7 +12,9 @@ describe("Calculator Component", () => {
     it("should render without throwing an error", () => {
 
         const bandColors = {};
-        const calculation = {};
+        const calculation: ICalculationState = {
+            loading: false
+        };
         const setBandColor = jest.fn();
         const calculate = jest.fn();
 
