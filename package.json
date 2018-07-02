@@ -13,7 +13,7 @@
     "scripts": {
         "start": "react-scripts-ts start",
         "build": "react-scripts-ts build",
-        "test": "react-scripts-ts test --env=jsdom",
+        "test": "react-scripts-ts test --env=jsdom --coverage",
         "predeploy": "set \"REACT_APP_STAGE=production\" && npm run build",
         "postdeploy": "set \"REACT_APP_STAGE=development\"",
         "deploy": "firebase deploy",
