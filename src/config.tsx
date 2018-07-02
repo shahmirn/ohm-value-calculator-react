@@ -8,7 +8,7 @@ const dev = {
 
 const prod = {
     apiGateway: {
-        URL: "http://ohmvaluecalculator.azurewebsites.net"
+        URL: "https://ohmvaluecalculator.azurewebsites.net"
     }
 };
 
