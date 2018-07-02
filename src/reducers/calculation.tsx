@@ -9,7 +9,8 @@ const calculation = (state: ICalculation = initialState, action: ICalculation) =
                 ...state,
                 maximum: action.maximum,
                 minimum: action.minimum,
-                resistance: action.resistance
+                resistance: action.resistance,
+                tolerance: action.tolerance
             };
         default:
             return state

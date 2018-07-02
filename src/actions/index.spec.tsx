@@ -64,6 +64,7 @@ describe('async actions', () => {
                 maximum,
                 minimum,
                 resistance,
+                tolerance,
                 type: 'SET_CALCULATION'
             }
         ]

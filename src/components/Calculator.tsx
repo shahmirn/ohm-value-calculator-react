@@ -103,6 +103,9 @@ export const Calculator = withStyles(styles)(
                                     Resistance: {calculation.resistance} {calculation.resistance !== undefined ? 'ohms' : ''}
                                 </Grid>
                                 <Grid item={true} xs={12}>
+                                    Tolerance: {calculation.tolerance && (calculation.tolerance * 100) + '%'}
+                                </Grid>
+                                <Grid item={true} xs={12}>
                                     Minimum: {calculation.minimum} {calculation.minimum !== undefined ? 'ohms' : ''}
                                 </Grid>
                                 <Grid item={true} xs={12}>

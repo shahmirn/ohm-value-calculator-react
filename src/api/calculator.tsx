@@ -11,13 +11,15 @@ export default {
                 cb({
                     maximum: result.maximum,
                     minimum: result.minimum,
-                    resistance: result.resistance
+                    resistance: result.resistance,
+                    tolerance: result.tolerance
                 });
             }, err => {
                 cb({
                     maximum: undefined,
                     minimum: undefined,
-                    resistance: undefined
+                    resistance: undefined,
+                    tolerance: undefined
                 });
             })
 }

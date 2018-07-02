@@ -14,6 +14,7 @@ describe('calculation reducer', () => {
                     maximum: -1,
                     minimum: -2,
                     resistance: -3,
+                    tolerance: -4,
                     type: 'SET_CALCULATION'
                 }
             )
@@ -21,7 +22,8 @@ describe('calculation reducer', () => {
             {
                 maximum: -1,
                 minimum: -2,
-                resistance: -3
+                resistance: -3,
+                tolerance: -4
             }
         );
     });
